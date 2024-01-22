@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vh, 62.5%);
+
+  --bg-color: #ffffff;
+  --txt-color: #323238;
+  --bg-controls: #e1e1e6;
+  --bg-button: #e1e1e6;
+  --bg-button-dark: #29292e;
+  --bg-button-active: #02799d;
+  --txt-button: #ffffff;
+}
+
+html.dark {
+  --bg-color: hsl(194, 5%, 7%);
+  --txt-color: #ffffff;
+}
+
+html.dark .ph-sun,
+html:not(.dark) .ph-moon {
+  display: none;
+}
+
+html.dark button {
+  color: var(--txt-color);
+}
+
+html.dark aside button {
+  background-color: var(--bg-button-dark);
+}
+
+html.dark aside button.playing {
+  background-color: var(--bg-button-active);
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 4.2rem;
+  line-height: 0;
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 19.2rem;
+  width: 100%;
+  max-width: 82.1rem;
+  height: 33.8rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  filter: brightness(1);
+  transform: scale(1.1);
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: 500;
+}
+
+#controls {
+  gap: 4rem;
+}
+
+#controls button {
+  font-size: 4.8rem;
+}
+
+button.secondary {
+  color: var(--bg-button-active);
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+aside button {
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2rem;
+  background-color: var(--bg-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ph-tree,
+.ph-cloud-snow,
+.ph-storefront,
+.ph-fire {
+  font-size: 7rem;
+}
+
+#soundsControls .playing {
+  background-color: var(--bg-button-active);
+  color: var(--txt-button);
+}
+
+/*  Controls */
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 50%;
+  }
+
+  #app {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10rem;
+  }
+}

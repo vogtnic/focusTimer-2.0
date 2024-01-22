@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temporizador estilo pomodoro 2.0" />
+    <title>FocusTimer - 2.0</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="source/main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">Ativar dark mode!</span>
+        <i class="ph ph-sun"></i>
+        <i class="ph ph-moon"></i>
+      </button>
+      <main>
+        <section id="timer" class="flex">
+          <span id="minutes">25</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </section>
+
+        <section id="controls" class="flex">
+          <button data-action="toggleRunning" class="ph ph-play-circle">
+            <span class="sr-only">Iniciar contador</span>
+          </button>
+
+          <button data-action="toggleRunning" class="ph ph-pause-circle">
+            <span class="sr-only">Pausar contador</span>
+          </button>
+
+          <button data-action="reset" class="ph ph-stop-circle">
+            <span class="sr-only">Parar Contador</span>
+          </button>
+
+          <button data-action="more" class="ph ph-plus-circle">
+            <span class="sr-only">Adicionar 5 minutos</span>
+          </button>
+
+          <button data-action="less" class="ph ph-minus-circle">
+            <span class="sr-only">Remover 5 minutos</span>
+          </button>
+        </section>
+      </main>
+      <aside id="soundsControls">
+        <button class="ph ph-tree" data-action="playForestSound">
+          <span class="sr-only">Música tema: Floresta</span>
+        </button>
+
+        <button class="ph ph-cloud-snow" data-action="playRainSound">
+          <span class="sr-only">Música tema: Chuva</span>
+        </button>
+
+        <button class="ph ph-storefront" data-action="playCoffeeShopSound">
+          <span class="sr-only">Música tema: Cafeteria</span>
+        </button>
+
+        <button class="ph ph-fire" data-action="playFireplaceSound">
+          <span class="sr-only">Música tema: Fogo</span>
+        </button>
+      </aside>
+    </div>
+  </body>
+</html>
